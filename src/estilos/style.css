@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+
+.main {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.wrapper {
+    width: 420px;
+    background: rgb(126, 118, 197);
+    border: 2px solid rgb(255, 255, 255, .2);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.wrapper h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.wrapper .input-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255, .2);
+    outline: none;
+    border-radius: 40px;
+    font-size: 18px;
+    color: #fff;
+    padding: 20px 45px 20px 20px;
+}
+
+.wrapper .select-box {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+
+}
+
+.select-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid rgb(255, 255, 255, .2);
+    outline: none;
+    border-radius: 40px;
+    font-size: 18px;
+    color: #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+option {
+    background: rgb(91, 85, 136);
+    color: #fff;
+}
+
+.input-box input::placeholder {
+    color: #fff;
+
+}
+
+.icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+}
+
+.wrapper button {
+    width: 100%;
+    height: 45px;
+    background: #fff;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+}
+
+.wrapper button:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, .4);
+    background: #017AF5;
+}
+
+.wrapper .link {
+
+    font-size: 14.5px;
+    text-align: center;
+    margin: 20px 0 15px;
+}
+
+.link .linkTxt {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.link .linkTxt:hover {
+    text-decoration: underline;
+}
+
+.dashboard-content {
+    padding: 2px;
+    display: felx;
+    justify-content: space-between;
+}
+
+.tarjeta-content {
+    font-size: medium;
+    font-weight: 500;
+    min-height: 150px;
+    height: 100%;
+    margin: 20px;
+    border-radius: 10px;
+    padding: 20px;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+}
+
+.container {
+    border: 2px solid #dedede;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
