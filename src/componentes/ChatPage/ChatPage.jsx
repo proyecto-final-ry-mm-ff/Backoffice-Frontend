@@ -23,14 +23,19 @@ export default function ChatPage() {
                         <Topbar />
                         <div className='dashboard-content'>
                             <Grid container spacing={2}>
-                                <Grid item xs={3} md={3}>
+                                <Grid item xs={3} md={2.5}>
                                     <Box>
                                         <ChatList onChatSelect={setSelectedChat} /> {/* Pasar función para seleccionar chat */}
                                     </Box>
                                 </Grid>
-                                <Grid item xs={9} md={9}> {/* Ajustar el tamaño de Grid para Chat */}
+                                <Grid item xs={9} md={7}> {/* Ajustar el tamaño de Grid para Chat */}
                                     <Box>
                                         <Chat chat={selectedChat} /> {/* Pasar chat seleccionado */}
+                                    </Box>
+                                </Grid>
+                                <Grid item xs={9} md={2.5}> {/* Ajustar el tamaño de Grid para Chat */}
+                                    <Box>
+                                        <ChatList onChatSelect={setSelectedChat} /> {/* Pasar función para seleccionar chat */}
                                     </Box>
                                 </Grid>
                             </Grid>

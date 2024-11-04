@@ -19,12 +19,12 @@ const Chat = ({ chat }) => {
         }
     }, [messages]);
 
-    // Inicializa los mensajes cuando cambia el chat
+    // Cargar los mensajes 
     useEffect(() => {
         if (chat) {
             const initialMessages = [
-                { text: "Hola, que venden?", isSentByMe: false },
-                { text: "Muchas cosas", isSentByMe: true }
+                { text: "[ Mesaje del cliente ]?", isSentByMe: false },
+                { text: "[ Respuesta automática ]", isSentByMe: true }
             ];
             setMessages(initialMessages);
         }
@@ -43,8 +43,7 @@ const Chat = ({ chat }) => {
             setMessages((prevMessages) => [...prevMessages, { text: newMessage, isSentByMe: true }]);
             setNewMessage('');
         }
-
-        const response = await sendMessageToChat(newMessage);
+        const response = await sendMessageToChat(JSON.stringify(newMessage));
         console.log("Respuesta de la API:", response);
     };
 

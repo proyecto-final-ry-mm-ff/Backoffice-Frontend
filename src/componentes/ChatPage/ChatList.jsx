@@ -32,7 +32,7 @@ export default function ChatList({ onChatSelect }) { // Recibe la función como 
                         <Grid item xs={12} key={index}>
                             <Card variant="outlined" onClick={() => handleChatClick(index)} style={{ cursor: 'pointer' }}>
                                 <CardContent>
-                                    <Typography variant="body2" color="textSecondary">
+                                    <Typography variant="body2">
                                         Chat {index + 1} - Vista previa
                                     </Typography>
                                     {/* Este será el espacio donde irán más detalles de cada chat */}

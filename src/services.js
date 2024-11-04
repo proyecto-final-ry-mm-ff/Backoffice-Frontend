@@ -1,6 +1,3 @@
-// Funciones que realizan llamadas a API.
-
-const urlApiObligatorio = "https://babytracker.develotion.com";
 const urlApi = "http://localhost:5015/api/chat";
 
 
@@ -31,6 +28,8 @@ export const sendMessageToChat = async (message) => {
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+const urlApiObligatorio = "https://babytracker.develotion.com";
 
 //llega el objeto con usuario y contraseña
 

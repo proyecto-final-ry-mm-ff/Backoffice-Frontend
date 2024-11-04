@@ -9,8 +9,6 @@
 }
 
 .message-sent {
-    color: var(--primary900);
-    background-color: var(--grey200);
     padding: 10px;
     border-radius: 8px;
     margin: 5px;
@@ -19,8 +17,6 @@
 }
 
 .message-received {
-    color: var(--primary800);
-    background-color: var(--grey100);
     padding: 10px;
     border-radius: 8px;
     margin: 5px;
