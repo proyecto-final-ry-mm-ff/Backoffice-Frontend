@@ -7,6 +7,7 @@ import { CssBaseline, Box, ThemeProvider } from '@mui/material';
 import Topbar from '../Global/Topbar';
 import Sidebar from '../Global/Sidebar';
 
+
 export default function ChatPage() {
 
     const [theme, colorMode] = useMode();
@@ -21,7 +22,7 @@ export default function ChatPage() {
                     <Sidebar />
                     <main className='content'>
                         <Topbar />
-                        <div className='dashboard-content'>
+                        <div>
                             <Grid container spacing={2}>
                                 <Grid item xs={3} md={2.5}>
                                     <Box>
