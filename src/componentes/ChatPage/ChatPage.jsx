@@ -26,17 +26,17 @@ export default function ChatPage() {
                             <Grid container spacing={2}>
                                 <Grid item xs={3} md={2.5}>
                                     <Box>
-                                        <ChatList onChatSelect={setSelectedChat} /> {/* Pasar función para seleccionar chat */}
+                                        <ChatList onChatSelect={setSelectedChat} />
                                     </Box>
                                 </Grid>
-                                <Grid item xs={9} md={7}> {/* Ajustar el tamaño de Grid para Chat */}
+                                <Grid item xs={6} md={7}>
                                     <Box>
-                                        <Chat chat={selectedChat} /> {/* Pasar chat seleccionado */}
+                                        <Chat chatId={selectedChat?.id} />
                                     </Box>
                                 </Grid>
-                                <Grid item xs={9} md={2.5}> {/* Ajustar el tamaño de Grid para Chat */}
+                                <Grid item xs={3} md={2.5}>
                                     <Box>
-                                        <ChatList onChatSelect={setSelectedChat} /> {/* Pasar función para seleccionar chat */}
+                                        <ChatList onChatSelect={setSelectedChat} />
                                     </Box>
                                 </Grid>
                             </Grid>

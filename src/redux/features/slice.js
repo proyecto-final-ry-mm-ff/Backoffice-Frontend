@@ -1,13 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { loginApi, RegistroApi, fetchDepartamentos, fetchCiudades, fetchCategorias, fetchEventos, addEventoApi } from '../../services';
+import { loginApi, RegistroApi, fetchDepartamentos, fetchCiudades, fetchCategorias, fetchEventos, addEventoApi } from '../../Services/services';
 import { act } from 'react';
 
-// Crear una acción asíncrona para el login
+
+//Crear una acción asíncrona para el login
 export const login = createAsyncThunk('user/login', async (user) => {
     const response = await loginApi(user);
     return response;
 });
 
+/*
 // Crear una acción asíncrona para el registro
 export const registro = createAsyncThunk('user/registro', async (newUser) => {
     const response = await RegistroApi(newUser);
@@ -46,7 +48,7 @@ export const getEventos = createAsyncThunk('event/getEventos', async () => {
 });
 
 // Crear un slice para manejar el estado del usuario
-const userSlice = createSlice({
+*/const userSlice = createSlice({
     name: 'user',
     initialState: { user: null, token: null, id: null, status: 'idle', error: null },
     reducers: {
@@ -55,7 +57,7 @@ const userSlice = createSlice({
             state.token = null;
             state.id = null;
         }
-    },
+    },/*
     extraReducers: (builder) => {
         builder
             .addCase(login.fulfilled, (state, action) => {
@@ -71,9 +73,9 @@ const userSlice = createSlice({
             .addCase(registro.rejected, (state, action) => {
                 state.error = action.error.message;
             });
-    }
+    }*/
 });
-
+/*
 // Crear un slice para manejar el estado de la ubicación (departamentos y ciudades)
 const locationSlice = createSlice({
     name: 'location',
@@ -124,9 +126,9 @@ const eventSlice = createSlice({
             });
     }
 });
-
-export const eventReducer = eventSlice.reducer;
-export const { agregarEvento, borrarEvento } = eventSlice.actions;
+*/
+//export const eventReducer = eventSlice.reducer;
+//export const { agregarEvento, borrarEvento } = eventSlice.actions;
 export const userReducer = userSlice.reducer;
-export const locationReducer = locationSlice.reducer;
-export const { logout } = userSlice.actions; 
+//export const locationReducer = locationSlice.reducer;
+//export const { logout } = userSlice.actions; 

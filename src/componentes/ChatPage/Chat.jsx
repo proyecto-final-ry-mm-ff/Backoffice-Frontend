@@ -2,17 +2,17 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Box, Card, CardContent, TextField, Button, useTheme } from '@mui/material';
 import { ColorModeContext, codigos } from "../../theme";
 import '../../estilos/chat.css';
-import { sendMessageToChat } from '../../services.js';
+import { sendMessageToChat } from '../../Services/signalRService.js';
 
-const Chat = ({ chat }) => {
+const Chat = ({ chatId }) => {
     const theme = useTheme();
     const colors = codigos(theme.palette.mode);
 
     const [messages, setMessages] = useState([]); // Estado para los mensajes
     const [newMessage, setNewMessage] = useState(''); // Estado para el nuevo mensaje
-    const messagesEndRef = useRef(null); // Ref para el final de los mensajes
+    const messagesEndRef = useRef(null); // Ref para el auto scroll
 
-    // Efecto para desplazar hacia abajo al agregar un nuevo mensaje
+    // Efecto para scroll con nuevo mensaje
     useEffect(() => {
         if (messagesEndRef.current) {
             messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -21,36 +21,39 @@ const Chat = ({ chat }) => {
 
     // Cargar los mensajes 
     useEffect(() => {
-        if (chat) {
-            const initialMessages = [
-                { text: "[ Mesaje del cliente ]?", isSentByMe: false },
-                { text: "[ Respuesta automática ]", isSentByMe: true }
-            ];
-            setMessages(initialMessages);
+        if (chatId) {
+            //TODO / Cargar mensajes         
+            setMessages([
+                { id: 1, text: "¡Hola! ¿Cómo estás?", isSentByMe: false },
+                { id: 2, text: "¡Bien, gracias! ¿Y tú?", isSentByMe: true },
+            ]);
         }
-    }, [chat]);
+    }, [chatId]); // Atento a cada vez que el chatId cambie
 
-    if (!chat) {
-        return (
-            <div>
-                <p>Selecciona un chat para ver la conversación.</p>
-            </div>
-        );
-    }
 
     const handleSendMessage = async () => {
         if (newMessage.trim()) {
             setMessages((prevMessages) => [...prevMessages, { text: newMessage, isSentByMe: true }]);
-            setNewMessage('');
+
+            // Enviar el mensaje a SignalR
+
+            const userId = 2;
+            try {
+                // Llamar a sendMessageToChat desde SignalRService
+                await sendMessageToChat(chatId, userId, newMessage);
+            } catch (err) {
+                console.error("Error al enviar mensaje:", err);
+            }
         }
-        const response = await sendMessageToChat(JSON.stringify(newMessage));
-        console.log("Respuesta de la API:", response);
     };
 
     return (
         <Card variant="outlined">
             <CardContent>
-                <h3>{chat.title}</h3>
+                <h2>Chat {chatId}</h2>
+
+                {/*Seccion para ver los mensajes*/}
+
                 <Box className="chat-box">
                     {messages.map((msg, index) => (
                         <div
@@ -65,6 +68,9 @@ const Chat = ({ chat }) => {
                     ))}
                     <div ref={messagesEndRef} /> {/* Div para el final de los mensajes */}
                 </Box>
+
+                {/*Seccion para escribir un mensaje*/}
+
                 <Box display="flex">
                     <TextField
                         variant="outlined"

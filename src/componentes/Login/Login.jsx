@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { loginApi } from '../../services'; //Realiza la llamada a la API de login.
+import { loginApi } from '../../Services/services'; //Realiza la llamada a la API de login.
 import { Link, useNavigate } from 'react-router-dom'; //Son lol componentes y hooks de react para manejar la navegación.
 import '../../estilos/style.css';
 import { FaUser } from "react-icons/fa";

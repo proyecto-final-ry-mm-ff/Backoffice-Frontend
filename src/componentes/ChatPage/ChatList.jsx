@@ -14,7 +14,7 @@ export default function ChatList({ onChatSelect }) { // Recibe la función como 
 
     const handleChatClick = (index) => {
         // Crear un objeto de chat para pasar al seleccionar
-        onChatSelect({ id: index + 1, title: `Chat ${index + 1}` });
+        onChatSelect({ id: index + 1 });
     };
 
     return (

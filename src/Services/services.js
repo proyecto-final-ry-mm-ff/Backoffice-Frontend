@@ -2,7 +2,7 @@ const urlApi = "http://localhost:5015/api/chat";
 
 
 // Servicio para enviar un mensaje
-export const sendMessageToChat = async (message) => {
+/*export const sendMessageToChat = async (message) => {
     try {
         console.log(JSON.stringify({ name: message }))
         const response = await fetch(`${urlApi}`, {
@@ -24,7 +24,7 @@ export const sendMessageToChat = async (message) => {
     } catch (error) {
         console.error("Error al enviar mensaje:", error);
     }
-};
+};*/
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -67,6 +67,8 @@ export const loginApi = async (objetoLogin) => {
     }
 };
 
+
+/*
 export const RegistroApi = (newUser) => {
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -235,4 +237,4 @@ export const borrarEventoApi = async (idEvento) => {
         console.error('Error:', error);
         throw error;
     }
-};
+};*/
